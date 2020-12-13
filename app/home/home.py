@@ -28,7 +28,10 @@ def placeOrder(cartId):
     token = jwt.encode({}, app.config['SECRET_KEY'])
     token = token.decode('UTF-8')
     headers = {'access-token': token, 'content-type': 'application/json'} 
-    url = 'http://orders:5004/place-order'
+    directoryPath = os.path.dirname(os.path.realpath(__file__))
+    with open("%s/../endpoints.yaml" % directoryPath, 'r') as stream:
+         placeordersUrl = yaml.load(stream)['placeordersUrl']
+    url = placeordersUrl
     data = {"cartId": cartId}
     data = json.dumps(data)
     logger.info("Loaded cart ID")

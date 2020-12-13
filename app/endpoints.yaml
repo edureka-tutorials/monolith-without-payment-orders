@@ -1,0 +1,2 @@
+paymentUrl: 'http://54.234.188.63:5005/payment'
+ordersUrl:  'http://54.234.188.63:5004/orders'

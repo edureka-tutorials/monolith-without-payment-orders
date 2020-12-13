@@ -11,4 +11,3 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 app.config['SECRET_KEY'] = 'secret'
 
 mysql = MySQL(app)
-
